@@ -15,7 +15,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F_torch
 
-from module import ConvBlock, CoordConvTh, HourGlass
+from .module import ConvBlock, CoordConvTh, HourGlass
 from starganv2_pytorch.utils.common import get_preds_fromhm, preprocess
 
 
@@ -25,7 +25,7 @@ class FAN(nn.Module):
             num_modules: int = 1,
             end_relu: bool = False,
             num_landmarks: int = 98,
-            fname_pretrained: bool = None,
+            fname_pretrained: str = None,
     ) -> None:
         super(FAN, self).__init__()
         self.num_modules = num_modules
